@@ -26,7 +26,15 @@ def initbuy():
     for symbol in list(buylist.keys()):
         if buylist[symbol] < 0.5:
             buylist.pop(symbol)
+    listString = ""
 
     #prints final list- tradable with good score.
+
     for symbol in buylist.keys():
         print(f'{symbol} : {buylist[symbol]}')
+        if listString != "":
+            listString +=','
+        listString += symbol
+
+
+    return buylist, listString
