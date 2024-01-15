@@ -20,6 +20,12 @@ def initbuy():
         if buylist[symbol] < 0.5:
             buylist.pop(symbol)
 
-
+    listString = ""
     for symbol in buylist.keys():
         print(f'{symbol} : {buylist[symbol]}')
+        if listString != "":
+            listString +=','
+        listString += symbol
+
+
+    return buylist, listString
